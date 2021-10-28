@@ -58,14 +58,14 @@ export function CalenderView() {
 
   return (
     <div>
-      {JSON.stringify(viewingMonth)}
+      {/* {JSON.stringify(viewingMonth)} */}
       {/* <CalenderHeader
         year={year}
         month={month}
         viewOtherMonth={viewOtherMonth}
       /> */}
-      {/* <WeekTitles containerValues={WEEKDAYS} />
-      <CalenderWeek containerValues={viewingMonth} /> */}
+      <WeekTitles containerValues={WEEKDAYS} />
+      <CalenderWeek containerValues={viewingMonthDates} />
     </div>
   );
 }

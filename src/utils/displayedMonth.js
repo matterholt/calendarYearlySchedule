@@ -17,9 +17,7 @@ function getWeekday(date) {
 function createDaysForCurrentMonth(year, month) {
   return [...Array(getNumberOfDaysInMonth(year, month))].map((day, index) => {
     return {
-      date: dayjs(`${year}-${month}-${index + 1}`)
-        .add(1, "month")
-        .format("YYYY-MM-DD"),
+      date: dayjs(`${year}-${month}-${index + 1}`).format("YYYY-MM-DD"),
       dayOfMonth: index + 1,
       isCurrentMonth: true,
       taskTodo: []
@@ -73,6 +71,7 @@ function DaysViewedForNextMonth(year, month, currentMonthDaysLength) {
 
 function CompleteCalenderView(year, month) {
   const currentMonthDays = createDaysForCurrentMonth(year, month);
+  console.log(currentMonthDays[0]);
 
   const currentMonthDaysdate = currentMonthDays[0].date;
   const currentMonthDaysLength = currentMonthDays.length;
