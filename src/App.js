@@ -1,6 +1,6 @@
 import "./styles.css";
 import { CalenderView } from "./components";
-import { ActiveHolidays } from "./components/holidaySchedule/ActiveHolidays";
+import { OverviewContainer } from "./components/holidayOverview/OverviewContainer";
 
 import holidaySchedule from "./utils/HolidayDates";
 export default function App() {
@@ -9,8 +9,7 @@ export default function App() {
       <h1 style={{ fontWeight: 900, fontSize: 25 }}>Month Planner</h1>
       {/* <CalenderView /> */}
       <div>
-        <h2 style={{ fontWeight: 700, fontSize: 20 }}>Days Scheduled off</h2>
-        <ActiveHolidays holidaySchedule={holidaySchedule.holiday} />
+        <OverviewContainer holidaySchedule={holidaySchedule} />
       </div>
     </div>
   );
