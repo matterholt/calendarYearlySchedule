@@ -48,7 +48,7 @@ export function CalenderView() {
     CompleteCalenderView(currentDate.format("YYYY"), viewingMonth)
   );
   const [viewingMonthEvents, setViewingMonthEvents] = useState(() =>
-    eventForViewMonth(viewingMonth, holidayData.hoidays)
+    eventForViewMonth(viewingMonth, holidayData.nationalHolidays)
   );
 
   // useEffect(() => {
