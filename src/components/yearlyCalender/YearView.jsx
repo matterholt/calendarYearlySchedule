@@ -1,49 +1,45 @@
-import { SimpleGrid,Box,Flex,Container } from "@chakra-ui/react"
 
-const Month = ({monthValue,bgColor})=>{
-    return(
-        <Box h="40" w="40" bg={bgColor}>
-            {monthValue}
+import dayjs from "dayjs";
+import { Flex, Text, Box, Wrap, Grid } from "@chakra-ui/react";
+czZ
 
-        </Box>
-    )
-}
-
-const YearQuarters = ({children})=>(
-    <Flex direction="column">
-        {children}
-    </Flex>
-)
-
-// TODO: 
-// use CalenderWeek component to place dates in side the month container
-// need to restructure the component's styles to make it fit inside the smaller space
-
+const MonthContainer = (props) => {
+    const { month } = props;
+    const monthWritenOut = month.format("MMMM");
+    const monthNumber = month.format("M");
+    const monthDays = getNumberOfdayinMonth(monthNumber);
+    const dates = monthDates(monthDays, Number(monthNumber), 2021);
+  
+    return (
+      <Box bg="royalblue" w="25%" w="300px"  color="white">
+        <h3>{monthWritenOut}</h3>
+        <Grid templateColumns="repeat(7, 1fr)" gap={4} color="black">
+          {dates.map((x) => (
+            <Box bg={x ? "" : "gray"}>
+              <Text key={x} p={0} color={"black"}>
+                {x}
+              </Text>
+            </Box>
+          ))}
+        </Grid>
+      </Box>
+    );
+  };
 export const YearView = ()=>{
-    return(
-        <Flex direction="row" m="10">
-            <YearQuarters>
-                <Month monthValue="1" bgColor="blue.100"/>
-                <Month monthValue="2"bgColor="blue.300"/>
-                <Month monthValue="3"bgColor="blue.500"/>
-            </YearQuarters>
-            <YearQuarters>
-                <Month monthValue="1" bgColor="green.100"/>
-                <Month monthValue="2"bgColor="green.300"/>
-                <Month monthValue="3"bgColor="green.500"/>
-            </YearQuarters>
-
-            <YearQuarters>
-                <Month monthValue="1" bgColor="orange.100"/>
-                <Month monthValue="2"bgColor="orange.300"/>
-                <Month monthValue="3"bgColor="orange.500"/>
-            </YearQuarters>
-            <YearQuarters>
-                <Month monthValue="1" bgColor="yellow.100"/>
-                <Month monthValue="2"bgColor="yellow.300"/>
-                <Month monthValue="3"bgColor="yellow.500"/>
-            </YearQuarters>
-        </Flex >
-
-    )
+    const monthsInAYear = getMonthsInAYear();
+    return (
+      <div className="App">
+        <h1>Hello CodeSandbox</h1>
+        <Wrap  w="100vw" justify="center">
+          {monthsInAYear.map((x, y) => (
+            <MonthContainer key={`${x}_${y}`} month={x} />
+          ))}
+        </Wrap>
+      </div>
+    );
 }
+
+
+
+
+
