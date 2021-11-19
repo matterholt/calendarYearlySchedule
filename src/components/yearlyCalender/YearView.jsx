@@ -1,33 +1,35 @@
 import {useState}from 'react'
 import dayjs from "dayjs";
-import { Flex, Text, Box, Wrap, Grid,Heading } from "@chakra-ui/react";
+import { Center,Flex, Text, Box, Wrap, Grid,Heading ,Button} from "@chakra-ui/react";
 
 import {monthsForTheYear}from "../../utils/monthlyCalender"
 
 
-function getNumberOfdayinMonth(monthValue, year = "2021") {
-    return dayjs(`${year}-${monthValue}-01`).daysInMonth();
-  }
+  function getNumberOfdayinMonth(mth, year = "2021") {
+      return dayjs(`${year}-${mth}-01`).daysInMonth();
+    }
+
   function PreviousMonth(month, year) {
     const weekStartsOn = 1;
-    const firstOfMonthDay = dayjs(`${year} - ${month} - 01`).day();
+   const firstOfMonthDay = dayjs(`${year} - ${month} - 01`).day();
     console.log(firstOfMonthDay)
-    if (firstOfMonthDay === 0 || firstOfMonthDay === 1) {
+    if (firstOfMonthDay <= 1) {
+      console.log('noting')
       return [];
     }
     const previousMonthDayShown = firstOfMonthDay - weekStartsOn;
 
-    // const perviousMonth = Array.apply(null, Array(previousMonthDayShown)).map(
-    //   (x, y) => null
+    const perviousMonth = Array.apply(null, Array(previousMonthDayShown)).map(
+      (x, y) => null
 
-    // );
+    );
 
     
-    return []
+    return perviousMonth
   }
   
   function monthDates(numOfdays, Mth, Yr) {
-    const lastMonthShownCurrentMonth = PreviousMonth(Mth, Yr);
+    const lastMonthShownCurrentMonth =  PreviousMonth(Mth, Yr);
     // need to return an object that has dates and wkNumber {wk:45,dates:[1,2,3,4,5,6,7]}
     const days = Array.apply(null, Array(numOfdays)).map((x, y) => y + 1);
     return [...lastMonthShownCurrentMonth, ...days];
@@ -46,7 +48,6 @@ const Month = (props) => {
         <Text  fontSize="150px" color="#0000002e" pt="0px"
         fontWeight="extrabold" >{monthNumber}
           </Text>
-
         </Box>
 
         <Heading as="h3" size="md" textAlign="center" p={3} bg="royalblue"  color="white">{monthWrittenOut}</Heading>
@@ -80,11 +81,20 @@ const YearContainer = (props)=>{
 
 export const YearView = ()=>{
     const [yearView, setYearView] = useState('2021')
+    // get all the data we need here at the start, get all calculations out of the way
+    const [fullCalenderYear, setFullCalenderYear] = useState()
     
 
     return (
       <div>
+        <Center>  
+                 <Flex w="lg  ">
+        <Button>previous</Button>
         <Heading as="h1"m={4} w="full" textAlign="center">{yearView} Holiday & Shutdown Schedule</Heading>
+        <Button>next</Button>
+        </Flex>
+        </Center>
+
         <YearContainer year={yearView}/>
       </div>
     );
