@@ -11,18 +11,20 @@ function getNumberOfdayinMonth(monthValue, year = "2021") {
   function PreviousMonth(month, year) {
     const weekStartsOn = 1;
     const firstOfMonthDay = dayjs(`${year} - ${month} - 01`).day();
-    if (firstOfMonthDay === 0) {
+    console.log(firstOfMonthDay)
+    if (firstOfMonthDay === 0 || firstOfMonthDay === 1) {
       return [];
     }
     const previousMonthDayShown = firstOfMonthDay - weekStartsOn;
-  
-    const perviousMonth = Array.apply(null, Array(previousMonthDayShown)).map(
-      (x, y) => null
-    );
-    return perviousMonth;
-  }
-  
 
+    // const perviousMonth = Array.apply(null, Array(previousMonthDayShown)).map(
+    //   (x, y) => null
+
+    // );
+
+    
+    return []
+  }
   
   function monthDates(numOfdays, Mth, Yr) {
     const lastMonthShownCurrentMonth = PreviousMonth(Mth, Yr);
@@ -36,21 +38,22 @@ const Month = (props) => {
     const monthWrittenOut = month.format("MMMM");
     const monthNumber = month.format("M");
     const monthDays = getNumberOfdayinMonth(monthNumber);
-    const dates = monthDates(monthDays, Number(monthNumber), 2021);
+    const dates = monthDates(monthDays,monthNumber, 2021);
   
     return (
       <Box w="250px">
-<Box w="250px" pos="absolute" color="black" zIndex={2} bg="transparent" textAlign="center">
-  <Text  fontSize="150px" color="#0000002e" pt="0px"
-  fontWeight="extrabold" >{monthNumber}
-    </Text>
+        <Box w="250px" pos="absolute" color="black" zIndex={2} bg="transparent" textAlign="center">
+        <Text  fontSize="150px" color="#0000002e" pt="0px"
+        fontWeight="extrabold" >{monthNumber}
+          </Text>
 
-</Box>
+        </Box>
+
         <Heading as="h3" size="md" textAlign="center" p={3} bg="royalblue"  color="white">{monthWrittenOut}</Heading>
         <Grid templateColumns="repeat(7, 1fr)" gap={1} color="black">
-          {dates.map((x) => (
-            <Box bg={x ? "" : ""}>
-              <Text fontSize="xs" key={x} p={2} color={"black"}>
+          {dates.map((x,y) => (
+            <Box bg={x ? "" : "" } key={`${x}_${y}`}>
+              <Text fontSize="xs"  p={2} color={"black"}>
                 {x}
               </Text>
             </Box>

@@ -7,8 +7,8 @@ export const WeekTitles = (props) => {
     <CalenderRow
       customStyle={{ fontWeight: "700", textTransform: "uppercase" }}
     >
-      {containerValues.map((x) => (
-        <CalenderDay key={x} dayValue={x} />
+      {containerValues.map((x,y) => (
+        <CalenderDay key={`${x}_${y}`} dayValue={x} />
       ))}
     </CalenderRow>
   );

@@ -5,7 +5,7 @@ export const HolidayItem = (props) => {
   const { id, eventName, dateStart, dateEnd } = holiday;
 
   return (
-    <ListItem key={id} mb="5" borderColor={specBgColor} borderBottom="1px">
+    <ListItem  mb="5" borderColor={specBgColor} borderBottom="1px">
       <Flex justify="space-between" p="2">
         <Text fontSize="xs">
           {dateStart}

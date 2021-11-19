@@ -5,8 +5,8 @@ export const CalenderWeek = (props) => {
   const { numbOfwk, containerValues } = props;
   return (
     <CalenderRow>
-      {containerValues.map((x) => (
-        <CalenderDay key={x} dayValue={x.date} />
+      {containerValues.map((x,y) => (
+        <CalenderDay key={`${x}_${y}`} dayValue={x.date} />
       ))}
     </CalenderRow>
   );

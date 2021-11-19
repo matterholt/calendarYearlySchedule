@@ -33,7 +33,7 @@ export const ActiveHolidays = ({ holidays, holidayTypeTitle, specBgColor }) => {
       <HolidayHeader holidayTypeTitle={holidayTypeTitle} />
       <List>
         {holidays.map((holiday) => (
-          <HolidayItem specBgColor={specBgColor} holiday={holiday} />
+          <HolidayItem key={holiday.id} specBgColor={specBgColor} holiday={holiday} />
         ))}
       </List>
     </Box>
