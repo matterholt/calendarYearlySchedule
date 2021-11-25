@@ -2,12 +2,14 @@
 import { Heading } from "@chakra-ui/react";
 import { ActiveHolidays } from "./ActiveHolidays";
 
+import {ScheduleModal}from './ScheduleModal'
+
 export const DaysScheduledOff = (props) => {
   const { holidaySchedule } = props;
   const { nationalHolidays, sceduledHolidays } = holidaySchedule;
 
   return (
-    <div>
+    <ScheduleModal>
       <Heading>Days Scheduled off</Heading>
 
       <div style={{ display: "flex", flexDirection: "row" }}>
@@ -22,6 +24,6 @@ export const DaysScheduledOff = (props) => {
           specBgColor="green.100"
         />
       </div>
-    </div>
+    </ScheduleModal>
   );
 };

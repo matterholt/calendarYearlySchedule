@@ -9,8 +9,9 @@ import {
   Button,
   Lorem
 } from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react"
 
-export const BasicUsage = () => {
+export const ScheduleModal = ({children}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -22,7 +23,7 @@ export const BasicUsage = () => {
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Lorem count={2} />
+            {children}
           </ModalBody>
 
           <ModalFooter>
