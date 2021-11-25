@@ -1,7 +1,8 @@
+
 import { Heading } from "@chakra-ui/react";
 import { ActiveHolidays } from "./ActiveHolidays";
 
-export const OverviewContainer = (props) => {
+export const DaysScheduledOff = (props) => {
   const { holidaySchedule } = props;
   const { nationalHolidays, sceduledHolidays } = holidaySchedule;
 
