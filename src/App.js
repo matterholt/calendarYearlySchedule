@@ -1,6 +1,8 @@
 import dayjs from "dayjs";
 import React, { useReducer } from "react";
-import { Header, CalenderBody } from "./components";
+import { CalenderBody } from "./components/calender";
+import { Header } from "./components/header";
+
 
 const IcrementReducer = (state, action) => {
   switch (action.type) {
