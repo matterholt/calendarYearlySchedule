@@ -6,7 +6,7 @@ export const DateContainer = (props) => {
   const { x, dayHasEvent } = props;
 
   return (
-    <Circle size="40px" >
+    <Circle size="20px" >
       {dayHasEvent ? (
         <EventPopup date={x} eventDets={dayHasEvent} />
       ) : (

@@ -4,7 +4,7 @@ import { GridCalender } from "./";
 export const WeekDayHeader = () => {
   const daysOfTheWeek = ["M", "T", "W", "T", "F", "S", "S"];
   return (
-    <GridCalender customBG="gray.100" p="4">
+    <GridCalender customBG="gray.100">
       {daysOfTheWeek.map((x) => (
         <Center>
           <Text fontWeight={900}>

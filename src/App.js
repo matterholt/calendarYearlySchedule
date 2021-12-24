@@ -28,9 +28,7 @@ export default function App() {
         yearDispatch={yearDispatch}
         yearToView={yearToView.format("YYYY")}
       />
-    
-
-
+  
         <CalenderBody yearToView={yearToView.format("YYYY")} />
 
   
