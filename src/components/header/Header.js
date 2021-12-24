@@ -17,7 +17,7 @@ export const Header = (props) => {
   const [title, setTitle] = useState("Company");
 
   return (
-    <Flex p="10" align="center">
+    <Flex p="10" align="center" bg="blue.700" color="white">
       <SettingOptions/>
 
       <Spacer />
