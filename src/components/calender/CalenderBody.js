@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import dayjs from "dayjs";
-import { Wrap } from "@chakra-ui/react";
+import { Wrap , Center} from "@chakra-ui/react";
 import { getMonthsInAYear } from "../../utils/utilFunctions";
 
 import { holidayDays } from "../../storage/holidayDays";
@@ -15,7 +15,9 @@ export const CalenderBody = (props) => {
   );
 
   return (
-    <Wrap>
+    <Center>
+
+    <Wrap w="1880px" p="4">
       {monthsInAYear.map((monthValue, y) => {
         const eventsForTheMonth = eventsOfTheYear.filter((event) => {
           const checkMonth = dayjs(event.date).format("MM");
@@ -24,13 +26,14 @@ export const CalenderBody = (props) => {
         });
         return (
           <MonthContainer
-            key={`${monthValue}_${y}`}
-            monthValue={monthValue}
-            yearToView={yearToView}
-            eventsForTheMonth={eventsForTheMonth}
+          key={`${monthValue}_${y}`}
+          monthValue={monthValue}
+          yearToView={yearToView}
+          eventsForTheMonth={eventsForTheMonth}
           />
-        );
-      })}
+          );
+        })}
     </Wrap>
+        </Center>
   );
 };
