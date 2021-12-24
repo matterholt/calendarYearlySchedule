@@ -4,10 +4,10 @@ import { GridCalender } from "./";
 export const WeekDayHeader = () => {
   const daysOfTheWeek = ["M", "T", "W", "T", "F", "S", "S"];
   return (
-    <GridCalender>
+    <GridCalender customBG="gray.100" p="4">
       {daysOfTheWeek.map((x) => (
         <Center>
-          <Text px="4" bg="gr">
+          <Text fontWeight={900}>
             {x}
           </Text>
         </Center>

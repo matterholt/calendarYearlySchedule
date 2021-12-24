@@ -1,18 +1,19 @@
 import React from "react";
 import { Text, Circle } from "@chakra-ui/react";
+import {EventPopup} from './'
 
 export const DateContainer = (props) => {
   const { x, dayHasEvent } = props;
 
   return (
-    <Circle
-      size="40px"
-      bg={dayHasEvent ? "red" : "white"}
-      color={dayHasEvent ? "white" : "black"}
-    >
-      <Text key={x} p={2}>
-        {x}
-      </Text>
+    <Circle size="40px" >
+      {dayHasEvent ? (
+        <EventPopup date={x} eventDets={dayHasEvent} />
+      ) : (
+        <Text key={x}>
+          {x}
+        </Text>
+      )}
     </Circle>
   );
 };

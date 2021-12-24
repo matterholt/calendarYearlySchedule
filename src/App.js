@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import React, { useReducer } from "react";
 import { CalenderBody } from "./components/calender";
 import { Header } from "./components/header";
-
+import {Center}from "@chakra-ui/react";
 
 const IcrementReducer = (state, action) => {
   switch (action.type) {
@@ -28,7 +28,9 @@ export default function App() {
         yearDispatch={yearDispatch}
         yearToView={yearToView.format("YYYY")}
       />
-      <CalenderBody yearToView={yearToView.format("YYYY")} />
+     
+        <CalenderBody yearToView={yearToView.format("YYYY")} />
+
     </div>
   );
 }
