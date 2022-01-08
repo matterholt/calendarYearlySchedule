@@ -1,5 +1,7 @@
+// https://holidayapi.com/docs
+
 export const holidayDays = [
-    { id: 1, holiday: "New Years Day", date: "2022-01-01", isobserved: true },
+    { id: 1, holiday: "New Years Day", date: "2022-01-02", isobserved: true },
     { id: 2, holiday: "Good Friday", date: "2022-04-15", isobserved: false },
     { id: 3, holiday: "Martin Luther King", date: "2022-01-17", isobserved: true },
     { id: 4, holiday: "Memorial Day", date: "2022-05-30", isobserved: true },
@@ -12,6 +14,6 @@ export const holidayDays = [
       date: "2022-11-25",
       isobserved: true
     },
-    { id: 9, holiday: "Christmas Holiday", date: "2022-12-26", isobserved: true },
+    { id: 9, holiday: "Christmas Holiday", date: "2022-12-25", isobserved: true },
     { id: 10, holiday: "New Years Eve", date: "2022-12-31", isobserved: true }
   ];

@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { Wrap ,Flex, Center} from "@chakra-ui/react";
 import { getMonthsInAYear } from "../../utils/utilFunctions";
 
-import { holidayDays } from "../../storage/holidayDays";
+import { holidayDays } from "../../utils/storage/holidayDays";
 import { MonthContainer } from "./";
 
 export const CalenderBody = (props) => {
