@@ -31,8 +31,6 @@ export default function YearlyCalender() {
   
         <CalenderBody yearToView={yearToView.format("YYYY")} />
 
-  
-
     </Box>
   );
 }
