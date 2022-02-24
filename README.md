@@ -1,2 +1,0 @@
-# calendarYearlySchedule
-Created with CodeSandbox
